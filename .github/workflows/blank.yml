@@ -6,15 +6,10 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: send telegram message on push
-        uses: appleboy/telegram-action@master
-        with:
-          to: 645608999
-          token: 6761703468:AAHNSgi351xeIVjjLLB52oHmGMZy5KkJEn8
-          message: |
-            ${{ github.actor }} created commit:
-            Commit message: ${{ github.event.commits[0].message }}
-            
-            Repository: ${{ github.repository }}
-            
-            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+     - uses: appleboy/telegram-action@master
+     - name: send photo message
+       with:
+        to: 645608999
+        token: 6761703468:AAHNSgi351xeIVjjLLB52oHmGMZy5KkJEn8
+        message: send photo message
+        photo: msg645608999-11097.jpg
